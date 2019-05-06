@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Current</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <td th:text="${current}"></td>
+
+        <div>Current</div>
+        <h1 th:text="${current.getCity()}"></h1>
+        <table  class="table table-striped">
+            <tr>
+                <th>Tempo Mínimo</th>
+                <th>Tempo Máximo</th>
+                <th>Tempo Atual</th>
+                <th>Descrição</th>
+
+            </tr>
+            <tr>
+                <td th:text="${current.getTemp_min()}"></td>
+                <td th:text="${current.getTemp_max()}"></td>
+                <td th:text="${current.getTemp()}"></td>
+                <td th:text="${current.getDescription()}"></td>
+            </tr>
+        </table> 
+    </body>
+</html>

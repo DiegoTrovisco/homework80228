@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Forecast</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <td th:text="${forecast}"></td>
+        <div>Forecast</div>
+        <table  class="table table-striped">
+            <tr>
+                    <th>Tempo Mínimo</th>
+                    <th>Tempo Máximo</th>
+                    <th>Tempo Atual</th>
+                    <th>Data</th>
+                    <th>Descrição</th>
+            </tr>
+            <th:block th:each="f : ${forecast}">
+                <tr>
+                   <td th:text="${f.getTemp_min()}"></td>
+                   <td th:text="${f.getTemp_max()}"></td>
+                   <td th:text="${f.getTemp()}"></td>
+                   <td th:text="${f.getDate()}"></td>
+                   <td th:text="${f.getDescription()}"></td>
+                </tr>
+            </th:block>
+        </table>
+    </body>
+</html>

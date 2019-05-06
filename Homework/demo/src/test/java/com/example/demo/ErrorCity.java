@@ -30,13 +30,13 @@ public class ErrorCity {
 	@Test
 	public void testInternalServerErrorCurrent() throws Exception {
 		
-            this.mvc.perform(get("/current").param("city", "Espinho")).andExpect(status().isOk());
+            this.mvc.perform(get("/current").param("city", "Espinho")).andExpect(status().isInternalServerError());
         }
 
         @Test
 	public void testInternalServerErrorForecast() throws Exception {
 		
-            this.mvc.perform(get("/forecast").param("city", "Espinho")).andExpect(status().isOk());
+            this.mvc.perform(get("/forecast").param("city", "Espinho")).andExpect(status().isInternalServerError());
 
 	}
 }
